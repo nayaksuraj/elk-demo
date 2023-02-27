@@ -1,0 +1,38 @@
+---
+- name: Install ELK Stack
+  hosts: elasticsearch_kibana_logstash
+  become: yes
+  vars_files:
+    - vars.yml
+  roles:
+    #- role: elasticsearch
+#    - role: kibana
+#      vars:
+#        elasticsearch_username: kibana_system
+#        elasticsearch_password: K1b4nap4sSw0rd
+    #- role: logstash
+    #  vars:
+#       elasticsearch_username: logstash_system
+#       elasticsearch_password: l0gst4sHpAssw0rd,
+
+#    - role: beats
+#      vars:
+#        elasticsearch_username: elastic
+#        elasticsearch_password: elastic_P123
+    - role: apm-server
+      vars:
+        elastic_apm_server_config:
+          apm-server:
+            host: "0.0.0.0:8200"
+          output:
+            elasticsearch:
+              hosts: [ "https://localhost:9200"]
+              username: elastic
+              password: elastic_P123
+              #ssl.verification_mode: false
+    - role: apm-agent
+      vars:
+        elastic_apm_java_agent_conf:
+          service_name: my-service
+          service_version: 1.0.0
+          server_url: http://192.168.25.110:8200

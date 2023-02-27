@@ -1,0 +1,48 @@
+---
+#
+#setup_kibana_dashboards: yes
+#kibana_url: http://kibana-node1-FQDN:5601 # FQDN of the kibna node
+#
+## FQDN of the elasticsearch nodes
+#elasticsearch_hosts:
+#  - elk-node1
+#  - elk-node2
+#  - elk-node3
+#  - elk-node4
+#  - elk-node5
+#  - elk-node6
+
+# Elasticsearch related Data
+disable_firewall: yes
+disable_selinux: yes
+elasticsearch_resolv_mode: hosts
+elasticsearch_security_enabled: yes
+elasticsearch_https_enabled: yes
+elasticsearch_users:
+  - username: beats_system
+    password: beats_p4ssword
+  - username: apm_system
+    password: aPmP4ssW0rd
+  - username: kibana
+    password: K1b4nap4sSw0rd
+  - username: kibana_system
+    password: K1b4nap4sSw0rd
+  - username: logstash_system
+    password: l0gst4sHpAssw0rd,
+  - username: remote_monitoring_user
+    password: Rem0t3.Mon1t0ringU
+  - username: elastic
+    password: elastic_P123
+
+elasticsearch_hosts:
+  - "192.168.25.110"
+# Kibana Related data
+setup_kibana_dashboards: yes
+kibana_url: "http://192.168.25.110:5601"
+
+elasticsearch_http_password: elastic_P123
+elasticsearch_bootstrap_password: elastic_P123
+
+beats_monitoring_enabled: yes
+elasticsearch_monitoring_enabled: yes
+elasticsearch_local_certs_dir: "~/very_secure_dir"

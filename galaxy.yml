@@ -1,0 +1,25 @@
+namespace: "garutilorenzo"
+name: "ansible_collection_elk"
+version: "1.0.1"
+readme: "README.md"
+description: "Install and configure the ELK stack, elastic beats and the APM server"
+authors:
+  - "Lorenzo Garuti <garuti.lorenzo@gmail.com>"
+dependencies:
+license:
+  - "GPL-3.0-or-later"
+tags:
+  - elk
+  - elasticsearch
+  - logstash
+  - kibana
+  - beats
+  - filebeat
+  - metricbeat
+  - heartbeat
+  - apm
+dependencies: {}
+repository: "https://github.com/garutilorenzo/ansible-collection-elk"
+documentation: "https://github.com/garutilorenzo/ansible-collection-elk/blob/master/README.md"
+homepage: "https://github.com/garutilorenzo/ansible-collection-elk"
+issues: "https://github.com/garutilorenzo/ansible-collection-elk/issues"

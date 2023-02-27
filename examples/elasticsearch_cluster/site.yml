@@ -1,0 +1,12 @@
+---
+- hosts: elasticsearch 
+  become: yes
+  remote_user: "CHANGE_ME"
+  collections:
+    - garutilorenzo.ansible_collection_elk
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - import_role:
+        name: elasticsearch
