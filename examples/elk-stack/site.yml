@@ -5,20 +5,20 @@
   vars_files:
     - vars.yml
   roles:
-    #- role: elasticsearch
-#    - role: kibana
-#      vars:
-#        elasticsearch_username: kibana_system
-#        elasticsearch_password: K1b4nap4sSw0rd
+    - role: elasticsearch
+    - role: kibana
+      vars:
+        elasticsearch_username: kibana_system
+        elasticsearch_password: K1b4nap4sSw0rd
     #- role: logstash
     #  vars:
 #       elasticsearch_username: logstash_system
 #       elasticsearch_password: l0gst4sHpAssw0rd,
 
-#    - role: beats
-#      vars:
-#        elasticsearch_username: elastic
-#        elasticsearch_password: elastic_P123
+    - role: beats
+      vars:
+        elasticsearch_username: elastic
+        elasticsearch_password: elastic_P123
     - role: apm-server
       vars:
         elastic_apm_server_config:
