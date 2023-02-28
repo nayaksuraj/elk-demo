@@ -46,3 +46,4 @@ elasticsearch_bootstrap_password: elastic_P123
 beats_monitoring_enabled: yes
 elasticsearch_monitoring_enabled: yes
 elasticsearch_local_certs_dir: "~/very_secure_dir"
+elasticsearch_subnet: "192.168.25.0/24"
